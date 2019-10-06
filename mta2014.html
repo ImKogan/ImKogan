@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<h3>
+    My name is Isroel Kogan - and I use this page to maintain links to my current work and related interests.
+</h3>
+
+<p>Recently I have been working on <a href=https://github.com/ImKogan/MTA2014>MTA2014</a> project.</p>
+
+<ul class="current">
+    <li><b>Github Repo: </b><a href=https://github.com/ImKogan/MTA2014>https://github.com/ImKogan/MTA2014</a>
+    <li><b>Webpage: </b><a href=https://mta2014.appspot.com/mta2014/map_mta>https://mta2014.appspot.com/mta2014/map_mta</a>
+</ul>
+<p><b>Note: </b> While the project is in development, the Webpage may change at any time. Please refer to my home page here for up-to-date functioning link.</p>
+<p><b>Addditionally: </b> While the site is in development, please only use Chrome. Other browsers are not tested against and may not render the page correctly.</p>
+
+<h4><u>Motivation for <a href=https://github.com/ImKogan/MTA2014>MTA2014</a></u></h4>
+<p>
+    Please check the <a href=https://github.com/ImKogan/MTA2014/blob/master/README.md>README</a> for a in-depth overview of the project and some relevant technical details. 
+</p>
+For those who use the NYC subway on a daily basis, it is hard not to wonder how a city as wealthy and prosperous as NYC can not solve its public transportation problems. When compared to many other cities around the world, the contrast is even starker, and not in favor of NYC. As NYC Subway usage has reached new peaks this decade, the state of the Subway has become more of a focal point. My initial motivation for this project stemmed from reading performance statistics published by the MTA <a>https://dashboard.mta.info/</a> and local news sources. I wanted to know how some of these metrics are determined. This project is an attempt to answer these questions.
+</p>
+<a href=https://github.com/ImKogan/MTA2014>MTA2014</a> uses historical NYC Subway data from 2014. This historical data is a repository of raw Subway perormance updates. These updates are the same updates used by the MTA to publish its performance metrics. These are the same live updates used to publish arrival times on Subway platforms and the MTA's website, <a href=https://new.mta.info>https://new.mta.info/</a>. All these updates are available in a format called <a href=https://developers.google.com/transit/gtfs-realtime>GTFS Realtime</a>. This feed specification is designed for public transportation agencies to provide live systemwide updates about their fleets. While this format is conducive for its stated task, it does not lend itself to reconstructing a histroical record for the past, let alone for systematic analysis. My application does just that. I chose to work on historical data from 2014 due to the raw data's availability (see <a href=https://github.com/ImKogan/MTA2014/blob/master/README.md>README</a>), which allows anyone to reproduce my work from scratch as documented <a href=https://github.com/ImKogan/MTA2014/blob/master/README.md>there</a>. Once the 2014 version of the project is developed, a live version based on recent and live data will be launched.
+</p>
+<p>
+    While the initial motivation was to process the data for analysis, the ETL process from GTFS-realtime format to a SQL DB inspired me to create a front end for the application that allows for visualizing the Subway updates on a interactive map. This step is now complete. The next step is dual
+<ul class=next-steps>
+    <li>Expose the application's DB to querrying by interested users. Researchers can query the DB to construct their own analysis, leveraging my work of transfroming the data from its raw format.
+    </li>
+    <li>Perform my own analysis, visualizations and insights.
+    </li>
+</ul>
+</p>

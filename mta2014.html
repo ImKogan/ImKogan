@@ -28,6 +28,13 @@ For those who use the NYC subway on a daily basis, it is hard not to wonder how 
 <h4><u>Why is it called MTA2014?</u></h4>
 <p>When the project was first conceived, the mta developer <a href=http://web.mta.info/developers/>portal</a> only provided historical data for a few months (and only some subway lines) in 2014. Later I decided to continue using static data in order to build the core of the application before building a live data pipeline.
 </p>
+<p>
+<img 
+    src="Diagram.svg" 
+    alt="Project sketch"
+    height="150"
+    width="100" />
+</p>
 <a href=https://github.com/ImKogan/MTA2014>MTA2014</a> uses historical NYC Subway data from 2014. This historical data is a repository of raw Subway perormance updates. These updates are the same updates used by the MTA to publish its performance metrics. These are the same live updates used to publish arrival times on Subway platforms and the MTA's website, <a href=https://new.mta.info>https://new.mta.info/</a>. All these updates are available in a format called <a href=https://developers.google.com/transit/gtfs-realtime>GTFS Realtime</a>. This feed specification is designed for public transportation agencies to provide live systemwide updates about their fleets. While this format is conducive for its stated task, it does not lend itself to reconstructing a histroical record for the past, let alone for systematic analysis. My application does just that. I chose to work on historical data from 2014 due to the raw data's availability (see <a href=https://github.com/ImKogan/MTA2014/blob/master/README.md>README</a>), which allows anyone to reproduce my work from scratch as documented <a href=https://github.com/ImKogan/MTA2014/blob/master/README.md>there</a>. Once the 2014 version of the project is developed, a live version based on recent and live data will be launched.
 </p>
 <p>

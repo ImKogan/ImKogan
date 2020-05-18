@@ -21,6 +21,7 @@ layout: default
 <p>Currently the application allows for visualizing and querying historical (2014) Subway trip data based on the MTA's historical <a href=http://web.mta.info/developers/MTA-Subway-Time-historical-data.html>archive</a>. Historical data instead of current live data is used as a means to build a prototype on static data before rolling out a live version.
 </p>
 <h4><u>Motivation</u></h4>
+<p>
 For those who use the NYC subway on a daily basis, it is hard not to wonder how a city as wealthy and prosperous as NYC can not solve its public transportation problems. When compared to many other cities around the world, the contrast is even starker, and not in favor of NYC. As NYC Subway usage has reached new peaks this decade (see <a href=https://en.wikipedia.org/wiki/History_of_the_New_York_City_Subway>here</a>), the state of the Subway has become a focal point. My initial motivation for this project stemmed from reading performance statistics published by the MTA <a href=http://dashboard.mta.info>http://dashboard.mta.info/</a> and local news sources. I wanted to know how some of these metrics are determined. This project is an attempt to answer these questions.
 </p>
 <p>As it turned out, live data for the MTA (and for transit systems in general) - follows a protocol called <a href=https://developers.google.com/transit/gtfs-realtime>GTFS Realtime</a>. While this specification is very useful for providing realtime updates (such as on <a href=https://new.mta.info>https://new.mta.info/</a> and on station platforms), it is not easily convertable to a tabular format (such as a csv) for analysis. The feed, which is updated every 15 seconds, consists of several components and extracting deduplicated but complete data was non-trivial.
@@ -39,14 +40,18 @@ A top level sketch of the project shows two main coponents: An ETL pipeline that
     height="750"
     width="500" />
 </p>
-<a href=https://github.com/ImKogan/MTA2014>MTA2014</a> uses historical NYC Subway data from 2014. This historical data is a repository of raw Subway perormance updates. These updates are the same updates used by the MTA to publish its performance metrics. These are the same live updates used to publish arrival times on Subway platforms and the MTA's website, <a href=https://new.mta.info>https://new.mta.info/</a>. All these updates are available in a format called <a href=https://developers.google.com/transit/gtfs-realtime>GTFS Realtime</a>. This feed specification is designed for public transportation agencies to provide live systemwide updates about their fleets. While this format is conducive for its stated task, it does not lend itself to reconstructing a histroical record for the past, let alone for systematic analysis. My application does just that. I chose to work on historical data from 2014 due to the raw data's availability (see <a href=https://github.com/ImKogan/MTA2014/blob/master/README.md>README</a>), which allows anyone to reproduce my work from scratch as documented <a href=https://github.com/ImKogan/MTA2014/blob/master/README.md>there</a>. Once the 2014 version of the project is developed, a live version based on recent and live data will be launched.
+<p>
+For a deeper dive into the code and the tools used, please check ou the projects <a href=https://github.com/ImKogan/MTA2014>repo</a>. See the <a href=https://github.com/ImKogan/MTA2014/blob/master/README.md>README</a> for instructions on how to reproduce the entire project in a VM via a Vagrant script.
+</p>
+<h4><u>Current state and next steps</u></h4>
+<p>
+As noted above, the application allows for visualization and querying of all the historical trip Subway data from 2014. The analysis tool would complete the prottype stage. Some additional work is needed (augmenting the DB with more static data) to allow for comprehensive analysis.
 </p>
 <p>
-    While the initial motivation was to process the data for analysis, the ETL process from GTFS-realtime format to a SQL DB inspired me to create a front end for the application that allows for visualizing the Subway updates on a interactive map. This step is now complete. The next step is dual
+If the app is to have any meaningful use, the pipeline and application needs to be replicated for current live data. Once this is accomplished, the application can have several uses:
 <ul class=next-steps>
-    <li>Expose the application's DB to querrying by interested users. Researchers can query the DB to construct their own analysis, leveraging my work of transfroming the data from its raw format.
-    </li>
-    <li>Perform my own analysis, visualizations and insights.
-    </li>
+    <li><b>General Public: </b>A tool to visualize past trip times, duration, etc. As the tool matures, planning could incorporated - such as the true cost of a commute in time - what routes underperform - and so on.
+    <li><b>Researchers: </b>An open source of normalized queryable data for the entire subway system. Uses are potentially multifaceted.
+    <li><b>Public transit planning: </b>My hope is that this work will be instrumental in finding solutions to better Public Transit solutions.
 </ul>
 </p>

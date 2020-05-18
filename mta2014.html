@@ -18,6 +18,8 @@ layout: default
 </ul>
 <p>
 </p>
+<p>Currently the application allows for visualizing and querying Historical Subway trip data based on the MTA's historical <a href=http://web.mta.info/developers/MTA-Subway-Time-historical-data.html>archive</a>. Historical data instead of current live data is used as a means to build a prototype on static data before rolling out a live version.
+</p>
 <h4><u>Motivation</u></h4>
 For those who use the NYC subway on a daily basis, it is hard not to wonder how a city as wealthy and prosperous as NYC can not solve its public transportation problems. When compared to many other cities around the world, the contrast is even starker, and not in favor of NYC. As NYC Subway usage has reached new peaks this decade (see <a href=https://en.wikipedia.org/wiki/History_of_the_New_York_City_Subway>here</a>), the state of the Subway has become a focal point. My initial motivation for this project stemmed from reading performance statistics published by the MTA <a href=http://dashboard.mta.info>http://dashboard.mta.info/</a> and local news sources. I wanted to know how some of these metrics are determined. This project is an attempt to answer these questions.
 </p>
@@ -28,7 +30,9 @@ For those who use the NYC subway on a daily basis, it is hard not to wonder how 
 <h4><u>Why is it called MTA2014?</u></h4>
 <p>When the project was first conceived, the mta developer <a href=http://web.mta.info/developers/>portal</a> only provided historical data for a few months (and only some subway lines) in 2014. Later I decided to continue using static data in order to build the core of the application before building a live data pipeline.
 </p>
+<h4><u>Component Diagram</u></h4>
 <p>
+A top level sketch of the project shows two main coponents: An ETL pipeline that feeds a PostGIS Database, and a Django app that serves data to the web page.
 <img 
     src="Diagram.svg" 
     alt="Project sketch"
